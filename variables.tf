@@ -1,4 +1,4 @@
-variable ibmcloud_api_key {
-  description = "The IBM Cloud platform API key needed to deploy IAM enabled resources"
+variable vpc_name {
+  description = "vpc name"
   type        = string
 }
