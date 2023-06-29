@@ -1,0 +1,21 @@
+name: "Blueprint Example"
+type: "blueprint"
+schema_version: "1.0.0"
+description: "test"
+inputs:
+  - name: prefix
+
+settings:
+  - name: TF_VERSION
+    value: 1.0
+modules:
+  - name: test
+    module_type: terraform
+    source:
+      source_type: github
+      git:
+        git_repo_url: "https://github.ibm.com/icse/blueprint"
+        git_branch: main
+    inputs:
+      - name: vpc_name
+        value: "{$blueprint.prefix}-vpc"
