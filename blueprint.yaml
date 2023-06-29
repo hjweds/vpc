@@ -14,7 +14,7 @@ modules:
     source:
       source_type: github
       git:
-        git_repo_url: "https://github.ibm.com/icse/blueprint"
+        git_repo_url: "https://github.com/hjweds/vpc"
         git_branch: main
     inputs:
       - name: vpc_name
