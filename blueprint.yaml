@@ -18,4 +18,4 @@ modules:
         git_branch: main
     inputs:
       - name: vpc_name
-        value: "${blueprint.prefix}-vpc"
+        value: "{{ blueprint.prefix }}-vpc"
