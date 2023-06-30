@@ -13,10 +13,10 @@ provider "ibm" {
 }
 
 # Create a VPC
-#resource "ibm_is_vpc" "testacc_vpc" {
-#  name = "${var.vpc_name}"
-#}
-
-data "ibm_is_image" "image" {
-  name = var.image_name
+resource "ibm_is_vpc" "testacc_vpc" {
+  name = "${var.vpc_name}"
 }
+
+#data "ibm_is_image" "image" {
+#  name = var.image_name
+#}

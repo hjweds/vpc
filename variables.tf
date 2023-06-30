@@ -1,4 +1,4 @@
-variable image_name {
-  description = "image name"
+variable vpc_name {
+  description = "vpc name"
   type        = string
 }
