@@ -2,12 +2,14 @@ name: "Blueprint Example"
 type: "blueprint"
 schema_version: "1.0.0"
 description: "test"
+tags:
+  - "test"
 inputs:
   - name: prefix
 
 settings:
   - name: TF_VERSION
-    value: 1.0
+    value: 1.3
 modules:
   - name: test
     module_type: terraform
@@ -18,4 +20,4 @@ modules:
         git_branch: main
     inputs:
       - name: vpc_name
-        value: "{{ blueprint.prefix }}-vpc"
+        value: $blueprint.prefix
