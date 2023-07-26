@@ -12,11 +12,12 @@ provider "ibm" {
   region = "us-south"
 }
 
-# Create a VPC
-resource "ibm_is_vpc" "testacc_vpc" {
-  name = "${var.vpc_name}"
+resource "null_resource" "agent" {
+  provisioner local-exec {
+    command = <<BASH
+    ibmcloud login --apikey ${var.ibmcloud_api_key} -r us-south
+    ibmcloud ks cluster config -c cisk8u8d0vhk20k72bog
+    kubectl set image -n schematics-job-runtime deployment/jobrunner jobrunner=icr.io/schematics-remote/schematics-job-runner:b899d928-262
+    BASH
+  }
 }
-
-#data "ibm_is_image" "image" {
-#  name = var.image_name
-#}

@@ -1,4 +1,4 @@
-variable vpc_name {
-  description = "vpc name"
+variable ibmcloud_api_key {
+  description = "api key"
   type        = string
 }
